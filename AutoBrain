@@ -1,0 +1,60 @@
+module.exports.AutoBrain=function(){
+  this.meta={
+    data:[],
+    networks:{},
+    schema:{},
+    stats:{}
+  };
+  this.init=function(data){
+    this.meta.data=data;
+    sanitize(this.meta.data);
+    sampleData(this.meta.data);
+  }
+  
+  
+  this.train(data){
+    
+  }
+  
+  this.run=function(data){
+  
+  }
+
+
+  function sanitize(data){
+    for(var i=0;i<
+  
+  }
+  
+  function sampleData(data){
+    shuffle(data);
+    this.data={}:
+    this.data.training=[];
+    this.data.test=[];
+    for(var i=0;i<Math.floor(0.8*this.data.length);i++){
+      this.data.training.push(this.data[i]);
+    }
+    for(var j=i+1;j<this.data.length;j++){
+      this.data.training.push(this.data[j]);
+    }
+  }
+  
+  function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+}
